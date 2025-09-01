@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <base target="_top">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jejak Aksi — Melangkah Bersama, Menorehkan Manfaat</title>
@@ -57,7 +55,253 @@
       <a href="#contact" class="hover:text-primary">Kontak</a>
     </div>
   </header>
-  <!-- ... Lanjutkan semua section lain persis seperti versi sebelumnya ... -->
-  <!-- Skrip JS section 9 nilai, smooth scroll, toast, dan submitForm tetap ada di bagian bawah sebelum </body> -->
+
+  <!-- HERO -->
+  <section class="hero-bg">
+    <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-primary leading-tight mb-4">Melangkah Bersama,<br>Menorehkan Manfaat.</h1>
+        <p class="mb-5 text-gray-700 max-w-xl">Jejak Aksi adalah gerakan kolaboratif yang menebarkan sembilan nilai integritas untuk mendorong aksi nyata di komunitas—mulai hari ini, dari langkahmu.</p>
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <a href="#join" class="px-5 py-3 bg-primary text-white rounded-full font-medium shadow hover:scale-105 hover:bg-primary transition">Gabung Relawan Awal</a>
+          <a href="#newsletter" class="px-5 py-3 bg-accent text-gray-900 rounded-full font-medium shadow hover:scale-105 hover:bg-yellow-300 transition">Dapatkan Update</a>
+        </div>
+        <p class="mt-2 text-xs text-gray-500">Gratis. Bisa berhenti kapan saja.</p>
+      </div>
+      <div class="bg-white border border-gray-100 rounded-2xl h-64 shadow flex items-center justify-center">
+        <div class="text-center animate-pulse">
+          <p class="text-xs uppercase tracking-wider text-gray-500 mb-1">Ilustrasi</p>
+          <p class="text-3xl font-heading text-primary font-semibold">Jejak → Aksi</p>
+          <p class="text-gray-600 mt-2">Visual “jalan” membentuk huruf A</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="font-heading text-3xl font-semibold text-primary">Tentang Jejak Aksi</h2>
+        <p class="mt-4 text-gray-700">Jejak Aksi lahir dari keyakinan sederhana: setiap langkah harus meninggalkan manfaat. Kami mengajak pemuda-pemudi untuk bergerak bersama, menyalakan aksi nyata, dan menjaga integritas dalam prosesnya.</p>
+      </div>
+      <div class="bg-gray-50 border rounded-2xl p-6">
+        <h3 class="font-heading text-xl font-semibold">Manifesto</h3>
+        <ul class="mt-3 text-gray-700 list-disc list-inside space-y-1">
+          <li>Perubahan lahir dari langkah nyata, kolaboratif, dan berintegritas.</li>
+          <li>Mendahulukan kebermanfaatan, bukan kehebohan.</li>
+          <li>Transparansi proses: data, dampak, belajar bareng.</li>
+          <li>Gerak inklusif: semua bisa ambil peran.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 NILAI -->
+  <section id="values" class="py-16 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-semibold text-primary">9 Nilai Jejak Aksi</h2>
+      <p class="mt-2 text-gray-600">Sembilan nilai ini kami pegang sebagai sikap, budaya, dan kompas saat melangkah.</p>
+      <div id="nilaiGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- 100 HARI & CARA TERLIBAT -->
+  <section id="roadmap" class="py-16 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="font-heading text-3xl font-semibold text-primary">Rencana 100 Hari Pertama</h2>
+        <ol class="mt-4 space-y-2 text-gray-700 list-decimal list-inside">
+          <li><b>Onboarding Relawan Awal:</b> pendaftaran, kelompok minat/keahlian, kanal komunikasi.</li>
+          <li><b>Pemetaan Isu & Aset Komunitas:</b> survei singkat, forum dengar, inventaris mitra/ruang.</li>
+          <li><b>Eksperimen Aksi Mikro:</b> 1–2 inisiatif kecil berdampak untuk belajar cepat.</li>
+          <li><b>Transparansi Proses:</b> ringkasan progres dua mingguan + ruang umpan balik publik.</li>
+        </ol>
+      </div>
+      <div class="bg-gray-50 border rounded-2xl p-6">
+        <h3 class="font-heading text-xl font-semibold">Cara Terlibat</h3>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl border bg-white hover:shadow-md transition">
+            <div class="font-semibold">Relawan Umum</div>
+            <div class="text-sm text-gray-600">Bantu eksekusi kegiatan & logistik.</div>
+          </div>
+          <div class="p-4 rounded-xl border bg-white hover:shadow-md transition">
+            <div class="font-semibold">Keahlian Tertentu</div>
+            <div class="text-sm text-gray-600">Desain, riset, konten, data, fasilitasi, legal, dll.</div>
+          </div>
+          <div class="p-4 rounded-xl border bg-white hover:shadow-md transition">
+            <div class="font-semibold">Mitra Komunitas</div>
+            <div class="text-sm text-gray-600">Sediakan ruang, jejaring, atau program bareng.</div>
+          </div>
+          <div class="p-4 rounded-xl border bg-white hover:shadow-md transition">
+            <div class="font-semibold">Kontributor Cerita</div>
+            <div class="text-sm text-gray-600">Tangkap & ceritakan jejak baik di sekitar kita.</div>
+          </div>
+        </div>
+        <a href="#join" class="mt-5 inline-block px-5 py-3 rounded-full bg-primary text-white text-sm font-medium shadow hover:scale-105 hover:bg-primary transition">Gabung Relawan Awal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM JOIN (DUMMY/NO SUBMIT) -->
+  <section id="join" class="py-16 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-semibold text-primary">Gabung Komunitas Jejak Aksi</h2>
+      <p class="mt-2 text-gray-600">Isi data di bawah untuk bergabung bersama kami.</p>
+      <form id="joinForm" class="mt-8 grid gap-4">
+        <input id="f_nama" type="text" placeholder="Nama Lengkap" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input id="f_email" type="email" placeholder="Email" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input id="f_wa" type="text" placeholder="WhatsApp" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input id="f_domisili" type="text" placeholder="Domisili" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <select id="f_peran" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+          <option value="">Pilih Peran</option>
+          <option>Relawan Umum</option>
+          <option>Keahlian Tertentu</option>
+          <option>Kontributor Cerita</option>
+          <option>Mitra Komunitas</option>
+        </select>
+        <label class="flex gap-2 text-sm mt-1">
+          <input id="f_consent" type="checkbox" required>
+          Saya setuju dengan kebijakan privasi
+        </label>
+        <button id="btnSubmit" type="submit" class="px-5 py-3 bg-primary text-white rounded-full font-medium shadow hover:scale-105 hover:bg-primary transition disabled:opacity-60 flex items-center">
+          <span id="submitLabel">Kirim & Bergabung</span>
+          <svg id="spinner" class="ml-2 hidden animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24"><circle class="opacity-30" cx="12" cy="12" r="10" stroke="white" stroke-width="4"/><path d="M22 12a10 10 0 0 1-10 10" stroke="white" stroke-width="4"/></svg>
+        </button>
+        <p id="formHint" class="text-sm text-gray-500"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-semibold text-primary">FAQ</h2>
+      <div class="mt-6 divide-y divide-gray-100 border rounded-2xl bg-white">
+        <details class="p-5" open>
+          <summary class="font-semibold cursor-pointer">Apa itu Jejak Aksi?</summary>
+          <p class="mt-2 text-gray-700">Gerakan kolaboratif yang menyalakan aksi nyata berlandaskan sembilan nilai integritas—dimulai dari komunitas dan langkah-langkah kecil yang konsisten.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer">Apakah sudah ada proyek?</summary>
+          <p class="mt-2 text-gray-700">Belum. Saat ini kami fase perkenalan: rekrut relawan awal, pemetaan isu, dan uji coba aksi mikro.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer">Apa bedanya dengan komunitas relawan lain?</summary>
+          <p class="mt-2 text-gray-700">Kami menekankan integritas sebagai budaya kerja (jujur, peduli, adil, dll.) dan transparansi proses—progres dibuka secara berkala.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer">Bagaimana caranya terlibat?</summary>
+          <p class="mt-2 text-gray-700">Isi form “Gabung Komunitas”, pilih peran, dan kami undang ke onboarding + kanal komunikasi.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer">Apakah berbayar untuk bergabung?</summary>
+          <p class="mt-2 text-gray-700">Tidak. Semua terbuka untuk umum, sesuai kapasitas dan komitmen waktu masing-masing.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer">Bagaimana dengan data saya?</summary>
+          <p class="mt-2 text-gray-700">Kami menggunakan data hanya untuk keperluan komunikasi & pengelolaan relawan. Kamu bebas berhenti kapan saja.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="py-12 border-t border-gray-100 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 text-sm text-gray-700">
+      <div>
+        <p class="font-heading text-lg font-semibold">Hubungi Kami</p>
+        <p>Email: <a href="mailto:halo@jejakaksi.org" class="text-primary hover:underline">halo@jejakaksi.org</a></p>
+        <p>Sosial: Instagram / TikTok / LinkedIn</p>
+      </div>
+      <div>
+        <p class="font-heading text-lg font-semibold">Kebijakan Privasi</p>
+        <p>Kami menghormati privasi Anda dan hanya menggunakan data untuk komunikasi & pengelolaan relawan.</p>
+      </div>
+    </div>
+    <p class="text-center text-xs text-gray-500 mt-6">© Jejak Aksi — berjalan bersama, menorehkan manfaat.</p>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toastWrap" class="fixed inset-x-0 bottom-4 z-50 flex justify-center pointer-events-none"></div>
+
+  <script>
+    // Navbar menu mobile
+    document.getElementBy...ElementById("burger").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          document.getElementById("mobileMenu").classList.add("hidden");
+        }
+      });
+    });
+
+    // Grid 9 nilai (static)
+    const nilaiList = [
+      { t: "Jujur", d: "Kepercayaan adalah pondasi setiap langkah." },
+      { t: "Peduli", d: "Kita bergerak karena tak ingin ada yang tertinggal." },
+      { t: "Mandiri", d: "Mampu berdiri tegak, siap menopang sesama." },
+      { t: "Disiplin", d: "Kecil tapi konsisten selalu menang." },
+      { t: "Tanggung Jawab", d: "Siap memikul tugas sampai tuntas." },
+      { t: "Kerja Keras", d: "Upaya terbaik, hasil mengikuti." },
+      { t: "Sederhana", d: "Fokus pada yang berdampak, tanpa berlebih." },
+      { t: "Berani", d: "Mengubah takut jadi tenaga untuk maju." },
+      { t: "Adil", d: "Memberi ruang dan kesempatan yang setara untuk semua." },
+    ];
+    const grid = document.getElementById("nilaiGrid");
+    nilaiList.forEach(n =>
+      grid.innerHTML += `
+        <div class="p-5 border rounded-2xl bg-white shadow-sm hover:shadow-md transition">
+          <h3 class="font-heading font-semibold text-lg text-primary">${n.t}</h3>
+          <p class="text-sm mt-2 text-gray-700">${n.d}</p>
+        </div>`
+    );
+
+    // Toast helper
+    function toast(msg, type = "success") {
+      const wrap = document.getElementById("toastWrap");
+      if (!wrap) return;
+      const base = "max-w-md w-full mx-4 rounded-xl shadow-lg px-4 py-3 text-sm pointer-events-auto";
+      const color = type === "error" ? "bg-red-600 text-white" : "bg-green-600 text-white";
+      const el = document.createElement("div");
+      el.className = `${base} ${color}`;
+      el.innerHTML = `<div class="flex items-start gap-3"><div class="font-medium">${type === "error" ? "Gagal" : "Berhasil"}</div><div class="opacity-90">${msg}</div></div>`;
+      wrap.appendChild(el);
+      setTimeout(() => { el.classList.add("opacity-0", "translate-y-2"); }, 2600);
+      setTimeout(() => { wrap.removeChild(el); }, 3200);
+    }
+
+    // Form logic (dummy)
+    const form = document.getElementById("joinForm");
+    if(form){
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        // Validasi sederhana
+        const nama = document.getElementById("f_nama").value.trim();
+        const email = document.getElementById("f_email").value.trim();
+        const wa = document.getElementById("f_wa").value.trim();
+        const domisili = document.getElementById("f_domisili").value.trim();
+        const peran = document.getElementById("f_peran").value;
+        const consent = document.getElementById("f_consent").checked;
+        if(!nama || !email || !wa || !domisili || !peran){
+          toast("Mohon lengkapi semua field.", "error"); return;
+        }
+        if(!consent){
+          toast("Centang persetujuan kebijakan privasi.", "error"); return;
+        }
+        // Simulasi submit (karena tidak bisa save di Github Pages)
+        form.reset();
+        toast("Data berhasil disimulasikan. Fitur submit aktif jika kamu deploy di Google Apps Script.", "success");
+      });
+    }
+  </script>
 </body>
 </html>
