@@ -19,11 +19,12 @@
                   radial-gradient(1200px 600px at 110% 10%, rgba(49,21,79,0.08), transparent 60%);
     }
     .nav-glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.85);}
-    #toastWrap > div { transition: opacity 0.3s, transform 0.3s; }
     section[id] { scroll-margin-top: 88px; }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-body">
+  <!-- DUMMY CLASS AGAR TAILWIND CDN TIDAK DROP FLEX/HIDDEN -->
+  <div style="display:none"><div class="hidden flex flex-col"></div></div>
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-50 nav-glass border-b border-gray-100 shadow-sm">
@@ -46,7 +47,8 @@
       </div>
       <button id="burger" class="md:hidden p-2 rounded hover:bg-gray-100 text-2xl transition">☰</button>
     </nav>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-100 px-4 py-3 flex flex-col gap-3 text-base bg-white font-medium">
+    <!-- MENU MOBILE (hidden default) -->
+    <div id="mobileMenu" class="hidden md:hidden flex flex-col border-t border-gray-100 px-4 py-3 gap-3 text-base bg-white font-medium">
       <a href="#about" class="hover:text-primary">Tentang</a>
       <a href="#values" class="hover:text-primary">Nilai</a>
       <a href="#roadmap" class="hover:text-primary">Rencana</a>
@@ -143,17 +145,19 @@
     </div>
   </section>
 
-  <!-- FORM JOIN (DUMMY/NO SUBMIT) -->
+  <!-- FORM JOIN NETLIFY -->
   <section id="join" class="py-16 border-t border-gray-100">
     <div class="max-w-3xl mx-auto px-4">
       <h2 class="font-heading text-3xl font-semibold text-primary">Gabung Komunitas Jejak Aksi</h2>
       <p class="mt-2 text-gray-600">Isi data di bawah untuk bergabung bersama kami.</p>
-      <form id="joinForm" class="mt-8 grid gap-4">
-        <input id="f_nama" type="text" placeholder="Nama Lengkap" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
-        <input id="f_email" type="email" placeholder="Email" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
-        <input id="f_wa" type="text" placeholder="WhatsApp" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
-        <input id="f_domisili" type="text" placeholder="Domisili" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
-        <select id="f_peran" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+      <form name="gabung-komunitas" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="mt-8 grid gap-4">
+        <input type="hidden" name="form-name" value="gabung-komunitas">
+        <input type="hidden" name="bot-field">
+        <input name="Nama" type="text" placeholder="Nama Lengkap" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input name="Email" type="email" placeholder="Email" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input name="WhatsApp" type="text" placeholder="WhatsApp" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <input name="Domisili" type="text" placeholder="Domisili" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
+        <select name="Peran" required class="rounded-xl border-gray-200 focus-ring px-4 py-3">
           <option value="">Pilih Peran</option>
           <option>Relawan Umum</option>
           <option>Keahlian Tertentu</option>
@@ -161,14 +165,12 @@
           <option>Mitra Komunitas</option>
         </select>
         <label class="flex gap-2 text-sm mt-1">
-          <input id="f_consent" type="checkbox" required>
+          <input name="Consent" type="checkbox" required>
           Saya setuju dengan kebijakan privasi
         </label>
-        <button id="btnSubmit" type="submit" class="px-5 py-3 bg-primary text-white rounded-full font-medium shadow hover:scale-105 hover:bg-primary transition disabled:opacity-60 flex items-center">
-          <span id="submitLabel">Kirim & Bergabung</span>
-          <svg id="spinner" class="ml-2 hidden animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24"><circle class="opacity-30" cx="12" cy="12" r="10" stroke="white" stroke-width="4"/><path d="M22 12a10 10 0 0 1-10 10" stroke="white" stroke-width="4"/></svg>
+        <button type="submit" class="px-5 py-3 bg-primary text-white rounded-full font-medium shadow hover:scale-105 hover:bg-primary transition disabled:opacity-60 flex items-center">
+          Kirim & Bergabung
         </button>
-        <p id="formHint" class="text-sm text-gray-500"></p>
       </form>
     </div>
   </section>
@@ -177,32 +179,7 @@
   <section id="faq" class="py-16 border-t border-gray-100">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="font-heading text-3xl font-semibold text-primary">FAQ</h2>
-      <div class="mt-6 divide-y divide-gray-100 border rounded-2xl bg-white">
-        <details class="p-5" open>
-          <summary class="font-semibold cursor-pointer">Apa itu Jejak Aksi?</summary>
-          <p class="mt-2 text-gray-700">Gerakan kolaboratif yang menyalakan aksi nyata berlandaskan sembilan nilai integritas—dimulai dari komunitas dan langkah-langkah kecil yang konsisten.</p>
-        </details>
-        <details class="p-5">
-          <summary class="font-semibold cursor-pointer">Apakah sudah ada proyek?</summary>
-          <p class="mt-2 text-gray-700">Belum. Saat ini kami fase perkenalan: rekrut relawan awal, pemetaan isu, dan uji coba aksi mikro.</p>
-        </details>
-        <details class="p-5">
-          <summary class="font-semibold cursor-pointer">Apa bedanya dengan komunitas relawan lain?</summary>
-          <p class="mt-2 text-gray-700">Kami menekankan integritas sebagai budaya kerja (jujur, peduli, adil, dll.) dan transparansi proses—progres dibuka secara berkala.</p>
-        </details>
-        <details class="p-5">
-          <summary class="font-semibold cursor-pointer">Bagaimana caranya terlibat?</summary>
-          <p class="mt-2 text-gray-700">Isi form “Gabung Komunitas”, pilih peran, dan kami undang ke onboarding + kanal komunikasi.</p>
-        </details>
-        <details class="p-5">
-          <summary class="font-semibold cursor-pointer">Apakah berbayar untuk bergabung?</summary>
-          <p class="mt-2 text-gray-700">Tidak. Semua terbuka untuk umum, sesuai kapasitas dan komitmen waktu masing-masing.</p>
-        </details>
-        <details class="p-5">
-          <summary class="font-semibold cursor-pointer">Bagaimana dengan data saya?</summary>
-          <p class="mt-2 text-gray-700">Kami menggunakan data hanya untuk keperluan komunikasi & pengelolaan relawan. Kamu bebas berhenti kapan saja.</p>
-        </details>
-      </div>
+      <div class="mt-6 divide-y divide-gray-100 border rounded-2xl bg-white" id="faqlist"></div>
     </div>
   </section>
 
@@ -222,86 +199,80 @@
     <p class="text-center text-xs text-gray-500 mt-6">© Jejak Aksi — berjalan bersama, menorehkan manfaat.</p>
   </footer>
 
-  <!-- Toast -->
-  <div id="toastWrap" class="fixed inset-x-0 bottom-4 z-50 flex justify-center pointer-events-none"></div>
-
   <script>
-    // Navbar menu mobile
-    document.getElementBy...ElementById("burger").addEventListener("click", () => {
-      document.getElementById("mobileMenu").classList.toggle("hidden");
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').slice(1);
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-          document.getElementById("mobileMenu").classList.add("hidden");
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+      // Burger menu toggle
+      document.getElementById("burger").addEventListener("click", function() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
       });
-    });
-
-    // Grid 9 nilai (static)
-    const nilaiList = [
-      { t: "Jujur", d: "Kepercayaan adalah pondasi setiap langkah." },
-      { t: "Peduli", d: "Kita bergerak karena tak ingin ada yang tertinggal." },
-      { t: "Mandiri", d: "Mampu berdiri tegak, siap menopang sesama." },
-      { t: "Disiplin", d: "Kecil tapi konsisten selalu menang." },
-      { t: "Tanggung Jawab", d: "Siap memikul tugas sampai tuntas." },
-      { t: "Kerja Keras", d: "Upaya terbaik, hasil mengikuti." },
-      { t: "Sederhana", d: "Fokus pada yang berdampak, tanpa berlebih." },
-      { t: "Berani", d: "Mengubah takut jadi tenaga untuk maju." },
-      { t: "Adil", d: "Memberi ruang dan kesempatan yang setara untuk semua." },
-    ];
-    const grid = document.getElementById("nilaiGrid");
-    nilaiList.forEach(n =>
-      grid.innerHTML += `
-        <div class="p-5 border rounded-2xl bg-white shadow-sm hover:shadow-md transition">
-          <h3 class="font-heading font-semibold text-lg text-primary">${n.t}</h3>
-          <p class="text-sm mt-2 text-gray-700">${n.d}</p>
-        </div>`
-    );
-
-    // Toast helper
-    function toast(msg, type = "success") {
-      const wrap = document.getElementById("toastWrap");
-      if (!wrap) return;
-      const base = "max-w-md w-full mx-4 rounded-xl shadow-lg px-4 py-3 text-sm pointer-events-auto";
-      const color = type === "error" ? "bg-red-600 text-white" : "bg-green-600 text-white";
-      const el = document.createElement("div");
-      el.className = `${base} ${color}`;
-      el.innerHTML = `<div class="flex items-start gap-3"><div class="font-medium">${type === "error" ? "Gagal" : "Berhasil"}</div><div class="opacity-90">${msg}</div></div>`;
-      wrap.appendChild(el);
-      setTimeout(() => { el.classList.add("opacity-0", "translate-y-2"); }, 2600);
-      setTimeout(() => { wrap.removeChild(el); }, 3200);
-    }
-
-    // Form logic (dummy)
-    const form = document.getElementById("joinForm");
-    if(form){
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        // Validasi sederhana
-        const nama = document.getElementById("f_nama").value.trim();
-        const email = document.getElementById("f_email").value.trim();
-        const wa = document.getElementById("f_wa").value.trim();
-        const domisili = document.getElementById("f_domisili").value.trim();
-        const peran = document.getElementById("f_peran").value;
-        const consent = document.getElementById("f_consent").checked;
-        if(!nama || !email || !wa || !domisili || !peran){
-          toast("Mohon lengkapi semua field.", "error"); return;
-        }
-        if(!consent){
-          toast("Centang persetujuan kebijakan privasi.", "error"); return;
-        }
-        // Simulasi submit (karena tidak bisa save di Github Pages)
-        form.reset();
-        toast("Data berhasil disimulasikan. Fitur submit aktif jika kamu deploy di Google Apps Script.", "success");
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').slice(1);
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+            document.getElementById("mobileMenu").classList.add("hidden");
+          }
+        });
       });
-    }
+      // 9 Nilai Grid
+      const nilaiList = [
+        { t: "Jujur", d: "Kepercayaan adalah pondasi setiap langkah." },
+        { t: "Peduli", d: "Kita bergerak karena tak ingin ada yang tertinggal." },
+        { t: "Mandiri", d: "Mampu berdiri tegak, siap menopang sesama." },
+        { t: "Disiplin", d: "Kecil tapi konsisten selalu menang." },
+        { t: "Tanggung Jawab", d: "Siap memikul tugas sampai tuntas." },
+        { t: "Kerja Keras", d: "Upaya terbaik, hasil mengikuti." },
+        { t: "Sederhana", d: "Fokus pada yang berdampak, tanpa berlebih." },
+        { t: "Berani", d: "Mengubah takut jadi tenaga untuk maju." },
+        { t: "Adil", d: "Memberi ruang dan kesempatan yang setara untuk semua." },
+      ];
+      const grid = document.getElementById("nilaiGrid");
+      nilaiList.forEach(n =>
+        grid.innerHTML += `
+          <div class="p-5 border rounded-2xl bg-white shadow-sm hover:shadow-md transition">
+            <h3 class="font-heading font-semibold text-lg text-primary">${n.t}</h3>
+            <p class="text-sm mt-2 text-gray-700">${n.d}</p>
+          </div>`
+      );
+      // FAQ section
+      if(document.getElementById("faqlist")){
+        const faqs = [
+          {
+            q: "Apa itu Jejak Aksi?",
+            a: "Gerakan kolaboratif yang menyalakan aksi nyata berlandaskan sembilan nilai integritas—dimulai dari komunitas dan langkah-langkah kecil yang konsisten."
+          },
+          {
+            q: "Apakah sudah ada proyek?",
+            a: "Belum. Saat ini kami fase perkenalan: rekrut relawan awal, pemetaan isu, dan uji coba aksi mikro."
+          },
+          {
+            q: "Apa bedanya dengan komunitas relawan lain?",
+            a: "Kami menekankan integritas sebagai budaya kerja (jujur, peduli, adil, dll.) dan transparansi proses—progres dibuka secara berkala."
+          },
+          {
+            q: "Bagaimana caranya terlibat?",
+            a: "Isi form “Gabung Komunitas”, pilih peran, dan kami undang ke onboarding + kanal komunikasi."
+          },
+          {
+            q: "Apakah berbayar untuk bergabung?",
+            a: "Tidak. Semua terbuka untuk umum, sesuai kapasitas dan komitmen waktu masing-masing."
+          },
+          {
+            q: "Bagaimana dengan data saya?",
+            a: "Kami menggunakan data hanya untuk keperluan komunikasi & pengelolaan relawan. Kamu bebas berhenti kapan saja."
+          }
+        ];
+        document.getElementById("faqlist").innerHTML = faqs.map(faq => `
+          <details class="p-5">
+            <summary class="font-semibold cursor-pointer">${faq.q}</summary>
+            <p class="mt-2 text-gray-700">${faq.a}</p>
+          </details>
+        `).join('');
+      }
+    });
   </script>
 </body>
 </html>
